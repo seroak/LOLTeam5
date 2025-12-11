@@ -1,0 +1,71 @@
+.player-card {
+  width: 120px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--hex-deep-blue) 0%, var(--hex-dark-blue) 100%);
+  border: 1px solid var(--hex-gold);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  position: relative;
+  z-index: 10;
+}
+
+.player-card:hover {
+  border-color: var(--hex-cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.player-card:active {
+  cursor: grabbing;
+}
+
+.player-card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-white-transparent); /* Inner bevel */
+}
+
+.player-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.remove-player-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--hex-red);
+  color: white;
+  border: 1px solid var(--hex-gold);
+  display: none; /* Hidden by default */
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  z-index: 20;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.player-card:hover .remove-player-btn {
+  display: flex; /* Show on hover */
+}
+
+.remove-player-btn:hover {
+  background: #ff6b81;
+  transform: scale(1.1);
+}

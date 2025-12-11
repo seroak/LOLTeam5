@@ -1,0 +1,70 @@
+.team-board {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--bg-overlay);
+  border: var(--border-gold-transparent);
+  backdrop-filter: blur(5px);
+}
+
+.team-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.team-header.blue {
+  color: var(--hex-cyan);
+}
+
+.team-header.red {
+  color: var(--hex-red);
+}
+
+.vs-divider {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.vs-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--hex-gold);
+  font-style: italic;
+  text-shadow: 0 0 10px var(--hex-gold-dim);
+}
+
+.vs-divider::before,
+.vs-divider::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 40%;
+  background: linear-gradient(to bottom, transparent, var(--hex-gold-dim), transparent);
+  left: 50%;
+}
+
+.vs-divider::before {
+  top: 0;
+}
+
+.vs-divider::after {
+  bottom: 0;
+}

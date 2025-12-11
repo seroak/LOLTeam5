@@ -1,0 +1,45 @@
+:root {
+  /* Hextech Colors */
+  --hex-dark-blue: #010a13;
+  --hex-deep-blue: #091428;
+  --hex-blue: #0a323c;
+  --hex-gold: #c8aa6e;
+  --hex-gold-highlight: #f0e6d2;
+  --hex-gold-dim: #785a28;
+  --hex-cyan: #0ac8b9;
+  --hex-magic-blue: #cdfafa;
+  --hex-grey: #a09b8c;
+  --hex-red: #e84057;
+
+  /* Semantic Colors */
+  --bg-primary: var(--hex-dark-blue);
+  --bg-secondary: var(--hex-deep-blue);
+  --bg-panel: rgba(10, 50, 60, 0.8);
+  --bg-overlay: rgba(0, 0, 0, 0.3);
+  --bg-slot: rgba(1, 10, 19, 0.6);
+  --bg-input: rgba(1, 10, 19, 0.8);
+  --bg-pool: rgba(0, 0, 0, 0.2);
+
+  --text-primary: var(--hex-gold-highlight);
+  --text-secondary: var(--hex-grey);
+  --text-highlight: var(--hex-cyan);
+
+  --border-gold: 1px solid var(--hex-gold);
+  --border-cyan: 1px solid var(--hex-cyan);
+  --border-gold-transparent: 1px solid rgba(200, 170, 110, 0.1);
+  --border-white-transparent: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Effects */
+  --glow-gold: 0 0 10px rgba(200, 170, 110, 0.3);
+  --glow-gold-strong: 0 0 20px rgba(200, 170, 110, 0.5);
+  --glow-cyan: 0 0 10px rgba(10, 200, 185, 0.5);
+  --shadow-panel: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.5);
+}

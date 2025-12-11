@@ -1,0 +1,38 @@
+.player-input-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.player-input {
+  background: var(--bg-input);
+  border: 1px solid var(--hex-gold-dim);
+  color: var(--text-primary);
+  padding: 8px 16px;
+  font-size: 1rem;
+  width: 250px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.player-input:focus {
+  border-color: var(--hex-gold);
+}
+
+.add-btn {
+  background: var(--hex-blue);
+  border: 1px solid var(--hex-gold);
+  color: var(--hex-gold);
+  padding: 8px 24px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.add-btn:hover {
+  background: var(--hex-gold);
+  color: var(--hex-dark-blue);
+  box-shadow: var(--glow-gold);
+}
