@@ -4,7 +4,7 @@ interface PlayerInputProps {
   onAddPlayer: (name: string) => void;
 }
 
-export const PlayerInput: React.FC<PlayerInputProps> = ({ onAddPlayer }) => {
+export const PlayerInput = ({ onAddPlayer }: PlayerInputProps) => {
   const [name, setName] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -20,12 +20,12 @@ export const PlayerInput: React.FC<PlayerInputProps> = ({ onAddPlayer }) => {
       <input
         type="text"
         className="player-input"
-        placeholder="Enter summoner name..."
+        placeholder="소환사 이름 입력..."
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
       <button type="submit" className="add-btn">
-        Add
+        추가
       </button>
     </form>
   );

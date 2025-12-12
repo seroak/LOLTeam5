@@ -1,38 +1,77 @@
 .player-input-form {
   display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-  justify-content: center;
+  gap: 0.5rem;
 }
 
 .player-input {
-  background: var(--bg-input);
+  padding: 0.5rem;
+  background-color: var(--bg-input);
   border: 1px solid var(--hex-gold-dim);
   color: var(--text-primary);
-  padding: 8px 16px;
+  border-radius: 2px;
   font-size: 1rem;
-  width: 250px;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .player-input:focus {
   border-color: var(--hex-gold);
+  box-shadow: var(--glow-gold);
 }
 
 .add-btn {
-  background: var(--hex-blue);
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(to bottom, var(--hex-gold), var(--hex-gold-dim));
+  color: var(--hex-deep-blue);
   border: 1px solid var(--hex-gold);
-  color: var(--hex-gold);
-  padding: 8px 24px;
+  border-radius: 2px;
   cursor: pointer;
+  font-size: 0.9rem;
   font-weight: bold;
   text-transform: uppercase;
-  transition: all 0.2s;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .add-btn:hover {
-  background: var(--hex-gold);
-  color: var(--hex-dark-blue);
+  filter: brightness(1.1);
   box-shadow: var(--glow-gold);
+}
+
+.add-btn:active {
+  transform: translateY(1px);
+}
+
+.input-section {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.random-assign-btn {
+  padding: 0.5rem 1.5rem;
+  background: rgba(10, 200, 185, 0.1);
+  color: var(--hex-cyan);
+  border: 1px solid var(--hex-cyan);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.random-assign-btn:hover {
+  background: rgba(10, 200, 185, 0.2);
+  box-shadow: var(--glow-cyan);
+  text-shadow: 0 0 8px var(--hex-cyan);
+}
+
+.random-assign-btn:active {
+  transform: translateY(1px);
 }

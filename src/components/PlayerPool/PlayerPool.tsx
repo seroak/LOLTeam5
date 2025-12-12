@@ -20,10 +20,10 @@ export const PlayerPool = ({ players, assignments, onRemovePlayer }: PlayerPoolP
 
   return (
     <div className="player-pool-container">
-      <h3 className="pool-header">Unassigned Summoners</h3>
+      <h3 className="pool-header">대기 중인 소환사</h3>
       <div ref={setNodeRef} className="player-pool">
         {unassignedPlayers.length === 0 ? (
-          <div className="empty-pool-msg">No summoners waiting...</div>
+          <div className="empty-pool-msg">대기 중인 소환사 없습니다...</div>
         ) : (
           unassignedPlayers.map((p) => (
             <PlayerCard key={p.id} id={p.id} name={p.name} handleRemovePlayer={onRemovePlayer} />

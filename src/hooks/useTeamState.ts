@@ -28,6 +28,10 @@ export const useTeamState = () => {
   });
 
   const addPlayer = (name: string) => {
+    if (players.length > 9) {
+      alert("플레이어는 10명 초과해서 만들지 못합니다");
+      return;
+    }
     const newPlayer = { id: crypto.randomUUID(), name };
     setPlayers((prev) => [...prev, newPlayer]);
   };
@@ -74,6 +78,32 @@ export const useTeamState = () => {
     });
   };
 
+  const randomAssign = () => {
+    setAssignments((prev) => {
+      const next = { ...prev };
+
+      // 1. Get currently assigned player IDs
+      const assignedPlayerIds = new Set(Object.values(next).filter((id) => id !== null));
+
+      // 2. Get unassigned players
+      const unassignedPlayers = players.filter((p) => !assignedPlayerIds.has(p.id));
+
+      // 3. Get empty lanes
+      const emptyLanes = Object.keys(next).filter((key) => next[key] === null);
+
+      // 4. Shuffle unassigned players AND empty lanes
+      const shuffledPlayers = [...unassignedPlayers].sort(() => Math.random() - 0.5);
+      const shuffledLanes = [...emptyLanes].sort(() => Math.random() - 0.5);
+
+      // 5. Assign players to empty lanes
+      for (let i = 0; i < Math.min(shuffledPlayers.length, shuffledLanes.length); i++) {
+        next[shuffledLanes[i]] = shuffledPlayers[i].id;
+      }
+
+      return next;
+    });
+  };
+
   return {
     players,
     assignments,
@@ -81,5 +111,6 @@ export const useTeamState = () => {
     removePlayer,
     assignPlayer,
     unassignPlayer,
+    randomAssign,
   };
 };

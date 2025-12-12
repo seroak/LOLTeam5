@@ -16,7 +16,7 @@ import { useTeamState } from "./hooks/useTeamState";
 import "./App.css";
 
 function App() {
-  const { players, assignments, addPlayer, removePlayer, assignPlayer, unassignPlayer } = useTeamState();
+  const { players, assignments, addPlayer, removePlayer, assignPlayer, unassignPlayer, randomAssign } = useTeamState();
   const [activeId, setActiveId] = useState<string | null>(null);
 
   const sensors = useSensors(
@@ -57,7 +57,12 @@ function App() {
 
       <DndContext sensors={sensors} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
         <div className="main-content">
-          <PlayerInput onAddPlayer={addPlayer} />
+          <div className="input-section">
+            <PlayerInput onAddPlayer={addPlayer} />
+            <button className="random-assign-btn" onClick={randomAssign}>
+              랜덤 배치
+            </button>
+          </div>
 
           <TeamBoard assignments={assignments} players={players} onRemovePlayer={removePlayer} />
 
