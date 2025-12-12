@@ -38,7 +38,6 @@ export const useTeamState = () => {
 
   const removePlayer = (id: string) => {
     setPlayers((prev) => prev.filter((p) => p.id !== id));
-    // Also remove from assignments
     setAssignments((prev) => {
       const next = { ...prev };
       for (const [key, _] of Object.entries(next)) {
@@ -53,14 +52,12 @@ export const useTeamState = () => {
   const assignPlayer = (playerId: string, laneId: string) => {
     setAssignments((prev) => {
       const next = { ...prev };
-      // If player was already assigned somewhere, clear it
 
       for (const [key, _] of Object.entries(next)) {
         if (next[key] === playerId) {
           next[key] = null;
         }
       }
-      // Assign to new lane
       next[laneId] = playerId;
       return next;
     });
